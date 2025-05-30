@@ -34,7 +34,7 @@ export function initSearch(people) {
   // Lägg till en klickhändelse på "Sök"-knappen
   searchBtn.addEventListener("click", () => {
     // 1. Hämta texten i searchInput.value
-    let searchQuery = searchInput.value.trim().toLowerCase();
+    let searchQuery = searchInput.value;
 
     // 2. Skapa en boolean för found
     let foundSearchQuery = false;
@@ -54,14 +54,14 @@ export function initSearch(people) {
 
     // 3. Loopa igenom people-arrayen
     for (const prsnName of people){
-      if(searchQuery === prsnName.toLowerCase()){
+      if(searchQuery.trim().toLowerCase() === prsnName.toLowerCase()){
         foundSearchQuery = true;
         break;
       }
     }
 
     if(foundSearchQuery){
-      resultDisplay.innerText = "Namn hittades!"
+      resultDisplay.innerText = `Namn hittades! ${searchQuery}`;
     }else{
       resultDisplay.innerText = "Namn hittades inte.";
     }
