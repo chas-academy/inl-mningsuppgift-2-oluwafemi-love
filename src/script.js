@@ -53,7 +53,7 @@ export function initSearch(people) {
     // }
 
     // 3. Loopa igenom people-arrayen
-    for (const prsnName of people){
+    for (let prsnName of people){
       if(searchQuery.trim().toLowerCase() === prsnName.toLowerCase()){
         foundSearchQuery = true;
         break;
@@ -61,7 +61,7 @@ export function initSearch(people) {
     }
 
     if(foundSearchQuery){
-      resultDisplay.innerText = `Namn hittades! ${searchQuery}`;
+      resultDisplay.innerText = `Namn hittades: ${searchQuery}`;
     }else{
       resultDisplay.innerText = "Namn hittades inte.";
     }
