@@ -61,9 +61,9 @@ export function initSearch(people) {
     }
 
     if(foundSearchQuery){
-      resultDisplay.innerText = `Namn hittades: ${searchQuery}`;
+      resultDisplay.innerHTML = `Namn hittades: ${searchQuery}`;
     }else{
-      resultDisplay.innerText = "Namn hittades inte.";
+      resultDisplay.innerHTML = "Namn hittades inte.";
     }
 
 
